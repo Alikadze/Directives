@@ -1,0 +1,20 @@
+<div
+  *ngFor="let user of users"
+  [ngStyle]="{
+    'background-color': user.isActive ? 'green' : 'red',
+    marginBottom: '10px'
+  }"
+>
+  <div [ngSwitch]="user.role">
+    <div *ngSwitchCase="'User'">
+      {{ user.firstName }}
+      {{ user.lastName }}
+    </div>
+
+    <div *ngSwitchDefault>
+      {{ user.firstName }}
+      {{ user.lastName }}
+      <button>Delete</button>
+    </div>
+  </div>
+</div>
